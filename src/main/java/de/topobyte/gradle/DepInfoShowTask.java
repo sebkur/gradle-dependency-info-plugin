@@ -25,7 +25,7 @@ public class DepInfoShowTask extends AbstractDepInfoTask
 		if (configuration.isDebug()) {
 			SortedSet<String> names = project.getConfigurations().getNames();
 			for (String name : names) {
-				System.out.println(name);
+				logger.lifecycle("configuration: " + name);
 			}
 		}
 
@@ -38,7 +38,7 @@ public class DepInfoShowTask extends AbstractDepInfoTask
 			String group = d.getGroup();
 			String artifact = d.getName();
 			String version = d.getVersion();
-			System.out.println(
+			logger.lifecycle(
 					String.format("%s:%s:%s", group, artifact, version));
 		});
 	}
