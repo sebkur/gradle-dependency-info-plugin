@@ -18,6 +18,10 @@ build the current version:
 
     ./gradlew -PpublishForTesting publish
 
-The testing projects reside in the `test-local` directory. Have a look at what
-the script `test.sh` does. It tests the plugin in different scenarios,
-especially using different combinations of JDK and Gradle versions.
+This will put the plugin artifacts and metadata into a local Maven repository in
+directory `maven-repo`.
+The testing projects reside in the `test-local` directory and are configured to
+prioritize this local repository over the official plugin portal repository.
+Have a look at what the script `test.sh` does.
+It tests the plugin in different scenarios, especially using different
+combinations of JDK and Gradle versions.
