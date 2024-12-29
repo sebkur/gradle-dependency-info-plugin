@@ -22,11 +22,14 @@ import java.util.SortedSet;
 import org.gradle.api.Project;
 import org.gradle.api.artifacts.Configuration;
 import org.gradle.api.artifacts.DependencySet;
+import org.gradle.api.internal.ConventionTask;
 import org.gradle.api.plugins.JavaPlugin;
 import org.gradle.api.tasks.TaskAction;
 
-public class DepInfoShowTask extends AbstractDepInfoTask
+public class DepInfoShowTask extends ConventionTask
 {
+
+	private DepInfoPluginExtension extension;
 
 	public DepInfoShowTask()
 	{
@@ -34,19 +37,24 @@ public class DepInfoShowTask extends AbstractDepInfoTask
 		setGroup("info");
 	}
 
+	public void setConfiguration(DepInfoPluginExtension extension)
+	{
+		this.extension = extension;
+	}
+
 	@TaskAction
 	protected void showInfo()
 	{
 		Project project = getProject();
 
-		if (configuration.isDebug()) {
+		if (extension.isDebug()) {
 			SortedSet<String> names = project.getConfigurations().getNames();
 			for (String name : names) {
-				logger.lifecycle("configuration: " + name);
+				getLogger().lifecycle("configuration: " + name);
 			}
 		}
 
-		String configName = getConfiguration().getConfiguration();
+		String configName = extension.getConfiguration();
 
 		Configuration configuration = project.getConfigurations()
 				.getByName(configName);
@@ -55,7 +63,7 @@ public class DepInfoShowTask extends AbstractDepInfoTask
 			String group = d.getGroup();
 			String artifact = d.getName();
 			String version = d.getVersion();
-			logger.lifecycle(
+			getLogger().lifecycle(
 					String.format("%s:%s:%s", group, artifact, version));
 		});
 	}
