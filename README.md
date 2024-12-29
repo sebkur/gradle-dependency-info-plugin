@@ -11,8 +11,9 @@ See  [LGPL.md](LGPL.md) and [GPL.md](GPL.md) for details.
 
 # Development and testing
 
-Before publishing the plugin to the Gradle plugin portal, it should be tested
-locally. To help with that, there are a few testing-projects available within
+Before publishing the plugin to the Gradle plugin portal or the Topobyte Maven
+repository, it should be tested locally.
+To help with that, there are a few testing-projects available within
 this repository that use the locally built version. In order to test them, first
 build the current version:
 
