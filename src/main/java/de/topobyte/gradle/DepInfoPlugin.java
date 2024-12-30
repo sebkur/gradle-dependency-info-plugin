@@ -43,7 +43,7 @@ public class DepInfoPlugin implements Plugin<Project>
 
 		DepInfoShowTask task = project.getTasks().create("depinfo",
 				DepInfoShowTask.class);
-		task.setDescription("Displays all project dependencies");
+		task.setDescription("Displays all project dependencies.");
 		task.setConfiguration(extension);
 	}
 
