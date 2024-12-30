@@ -4,7 +4,7 @@ dependencies {
     testImplementation 'junit:junit:4.12'
 }
 
-eclipse.project.name = 'version-info-gradle-plugin-test3'
+eclipse.project.name = 'dependency-info-gradle-plugin-test3'
 
 depinfo {
     configuration "implementation"
