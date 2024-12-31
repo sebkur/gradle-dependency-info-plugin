@@ -23,7 +23,6 @@ import org.gradle.api.Project;
 import org.gradle.api.artifacts.Configuration;
 import org.gradle.api.artifacts.DependencySet;
 import org.gradle.api.internal.ConventionTask;
-import org.gradle.api.plugins.JavaPlugin;
 import org.gradle.api.tasks.TaskAction;
 
 public class DepInfoShowTask extends ConventionTask
@@ -33,7 +32,6 @@ public class DepInfoShowTask extends ConventionTask
 
 	public DepInfoShowTask()
 	{
-		dependsOn(JavaPlugin.CLASSES_TASK_NAME);
 		setGroup("info");
 	}
 
