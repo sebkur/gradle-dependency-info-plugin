@@ -19,3 +19,9 @@ cd test3
 pwd
 JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64/ ./gradlew clean
 popd
+
+pushd .
+cd test4
+pwd
+JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64/ ./gradlew clean
+popd
