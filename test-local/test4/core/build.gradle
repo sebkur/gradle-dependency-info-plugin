@@ -7,7 +7,7 @@ dependencies {
 eclipse.project.name = 'dependency-info-gradle-plugin-test3'
 
 depinfo {
-    configuration "implementation"
+    configuration = "implementation"
 }
 
 task copyJars(type: Copy) {
@@ -21,5 +21,5 @@ task copyDeps(type: Copy) {
 }
 
 task createRuntime(dependsOn: [copyJars, copyDeps]) {
-    description 'Setup the execution environment for the main scripts'
+    description = 'Setup the execution environment for the main scripts'
 }
