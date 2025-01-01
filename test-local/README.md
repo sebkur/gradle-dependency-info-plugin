@@ -5,3 +5,5 @@
           legacy way of applying the plugin
 * test3 - test things are working on Java 11/17 and Gradle 7.6.1,
           new way of applying the plugin
+* test4 - test things are working on Java 11/17 and Gradle 8.12,
+          new way of applying the plugin
